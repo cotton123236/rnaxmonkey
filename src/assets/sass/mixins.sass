@@ -1,0 +1,44 @@
+@use "sass:math"
+	
+@mixin rwdmax($max)
+	@media only screen and (max-width: $max + px)  
+		@content
+
+@function px($px)
+	@return math.div($px, 16) * 1rem
+
+@mixin flex($flex: flex, $fw: nowrap, $fd: row, $jc: center, $ai: center)
+	display: $flex
+	flex-wrap: $fw
+	flex-direction: $fd
+	justify-content: $jc
+	align-items: $ai
+
+@mixin pseudo($pos: absolute, $con: '', $dis: block)
+	position: $pos
+	content: $con
+	display: $dis
+
+@mixin posCenter($top: 50%, $left: 50%)
+	position: absolute
+	top: $top
+	left: $left
+	transform: translate(-50%, -50%)
+
+@mixin posFill
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+// vars
+$basic-font: 'Poppins', sans-serif
+
+$white: #fff
+$black: #000
+$gray: #7b8794
+$pink: #da127d
+$pink-light: #f364a2
+
+$transition: .4s
