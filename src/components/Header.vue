@@ -4,15 +4,15 @@
 <template>
   <header class="space-lr">
     <div class="container">
-      <router-link class="logo" to="/">
+      <a class="logo" href="javascript:;">
         <img src="./../assets/image/logo.svg" alt="logo"/>
-      </router-link>
+      </a>
       <nav>
-        <router-link class="links" to="/">Home</router-link>
-        <router-link class="links disable" to="/">Coming Soon</router-link>
-        <router-link class="links disable" to="/">Coming Soon</router-link>
-        <router-link class="links disable" to="/">Coming Soon</router-link>
-        <router-link class="links disable" to="/">Coming Soon</router-link>
+        <a class="links" href="javascript:;">Home</a>
+        <a class="links disable" href="javascript:;">Coming Soon</a>
+        <a class="links disable" href="javascript:;">Coming Soon</a>
+        <a class="links disable" href="javascript:;">Coming Soon</a>
+        <a class="links disable" href="javascript:;">Coming Soon</a>
       </nav>
 
     </div>
