@@ -1,34 +1,41 @@
 <script setup>
 import { reactive } from 'vue'
 
+import feature01 from './../../assets/image/home/feature-01.png'
+import feature02 from './../../assets/image/home/feature-02.png'
+import feature03 from './../../assets/image/home/feature-03.png'
+import feature04 from './../../assets/image/home/feature-04.png'
+import feature05 from './../../assets/image/home/feature-05.png'
+import feature06 from './../../assets/image/home/feature-06.png'
+
 const featureBlockData = reactive([
   {
-    img: 'feature-01.png',
+    img: feature01,
     title: 'Play to Earn',
     brief: 'The RNAxMonkey 3D Play-to-Earn games are designed togive you several exciting gameplay options, each one earning you in-game tokens!'
   },
   {
-    img: 'feature-02.png',
+    img: feature02,
     title: 'Minting',
     brief: 'The RNAxMonkey NFTs can be minted in our website using our native token, giving our token a true utilityand adding to its value.'
   },
   {
-    img: 'feature-03.png',
+    img: feature03,
     title: 'NFT STAKING',
     brief: 'The basic computing power of our Genesis NFT isshown as being between 100-300 power units. The better the quality of Genesis NFT, the higher the poweramount. The higher the player\'s NFT mining power, the more profit is realized.'
   },
   {
-    img: 'feature-04.png',
+    img: feature04,
     title: '3D Gaming',
     brief: 'Virtual reality will be implemented in the game, but havingvirtual reality glasses or other virtual reality relatedparaphernalia will not be a requirement for playing thegame.'
   },
   {
-    img: 'feature-05.png',
+    img: feature05,
     title: 'Expedition',
     brief: 'Build a team to eliminate enemies in the game. Every monkey has genetic characteristics, make a good arrangement of your monkeys team and winrewards with your team.'
   },
   {
-    img: 'feature-06.png',
+    img: feature06,
     title: 'Season',
     brief: 'Battle in the season mode and try to get a high ranking to get more token rewards.'
   },
@@ -47,7 +54,7 @@ const featureBlockData = reactive([
           <div class="photo-box">
             <div class="photo">
               <div class="image">
-                <img :src="`/src/assets/image/home/${item.img}`"/>
+                <img :src="item.img"/>
               </div>
             </div>
           </div>
