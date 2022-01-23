@@ -1,4 +1,55 @@
 <script setup>
+import { ref, reactive } from 'vue'
+import Menu from './Menu.vue'
+
+import tele from './../assets/icon/telegram.svg'
+import twit from './../assets/icon/twitter.svg'
+import enve from './../assets/icon/envelope.svg'
+
+const unit = reactive([
+  {
+    href: 'javascript:;',
+    name: 'Home',
+    isDisable: false
+  },
+  {
+    href: 'javascript:;',
+    name: 'Playnow',
+    isDisable: true
+  },
+  {
+    href: 'javascript:;',
+    name: 'Marketplace',
+    isDisable: true
+  },
+  {
+    href: 'javascript:;',
+    name: 'Farm',
+    isDisable: true
+  },
+  {
+    href: 'javascript:;',
+    name: 'Whitepaper',
+    isDisable: false
+  },
+  {
+    href: 'javascript:;',
+    name: 'Learn More',
+    isDisable: false
+  }
+])
+
+const isMenuActive = ref(false)
+
+const socialIocn = reactive([
+  tele,
+  twit,
+  enve
+])
+
+const menuControl = () => {
+  isMenuActive.value = !isMenuActive.value
+}
 </script>
 
 <template>
@@ -8,14 +59,38 @@
         <img src="./../assets/image/logo.png" alt="logo"/>
       </router-link>
       <nav>
-        <a class="links" href="javascript:;">Home</a>
-        <a class="links disable" href="javascript:;">Coming Soon</a>
-        <a class="links disable" href="javascript:;">Coming Soon</a>
-        <a class="links disable" href="javascript:;">Coming Soon</a>
-        <a class="links disable" href="javascript:;">Coming Soon</a>
+        <a
+        class="links"
+        :href="item.href"
+        :class="{disable: item.isDisable}"
+        v-for="item in unit"
+        :key="item.name"
+        >
+        {{ item.name }}
+        </a>
       </nav>
-
+      <div class="social-box">
+        <a
+        href="javascript:;"
+        v-for="item in socialIocn"
+        :key="item"
+        >
+          <img :src="item" alt="">
+        </a>
+      </div>
+      <a
+      href="javascript:;"
+      class="menu-btn"
+      @click="menuControl"
+      >
+        <span></span><span></span><span></span>
+      </a>
     </div>
+    <Menu
+    :unitItems="unit"
+    :isActive="isMenuActive"
+    @changeMenuStatus="menuControl"
+    />
   </header>
 </template>
 
@@ -28,8 +103,9 @@ header
   top: 0
   left: 0
   width: 100%
-  height: 100px
+  height: 80px
   background-color: $black
+  overflow: hidden
   .container
     display: flex
     align-items: center
@@ -38,15 +114,58 @@ header
     width: 130px
     margin-right: 60px
   nav
-    +rwdmax(1024)
+    +rwdmax(1200)
       display: none
   .links
+    display: inline-flex
+    align-items: center
     font-size: px(16)
     font-weight: 600
     line-height: 1.5
-    margin: 0 20px
+    margin: 5px 15px
     transition: $transition
+    &:hover
+      &:not(.disable)
+        transform: translateY(-3px)
     &.disable
       pointer-events: none
       opacity: .7
+      &::after
+        content: 'Coming Soon'
+        display: inline-block
+        font-size: px(12)
+        font-weight: 600
+        line-height: 1.5
+        padding: 5px
+        border-radius: 8px 0
+        background-color: #1F2933
+        margin-left: 8px
+  .social-box
+    display: flex
+    align-items: center
+    margin-left: auto
+    a
+      display: inline-block
+      width: 30px
+      transition: $transition
+      &:hover
+        transform: translateY(-3px)
+      &:not(:last-child)
+        margin-right: 12px
+  .menu-btn
+    display: none
+    padding: 5px
+    margin-left: 20px
+    transition: $transition
+    +rwdmax(1200)
+      display: block
+    &:hover
+      transform: translateY(-3px)
+    span
+      display: block
+      width: 25px
+      height: 2px
+      background-color: $pink
+      margin: 5px 0
+
 </style>
