@@ -1,25 +1,30 @@
 <script setup>
 import { reactive } from 'vue'
 
+import eco01 from './../../assets/image/home/eco-01.png'
+import eco02 from './../../assets/image/home/eco-02.png'
+import eco03 from './../../assets/image/home/eco-03.png'
+import eco04 from './../../assets/image/home/eco-04.png'
+
 const ecoBlockData = reactive([
   {
     id: '01',
-    img: 'eco-01.png',
+    img: eco01,
     title: 'In-game Currency'
   },
   {
     id: '02',
-    img: 'eco-02.png',
+    img: eco02,
     title: 'Governance'
   },
   {
     id: '03',
-    img: 'eco-03.png',
+    img: eco03,
     title: 'Staking'
   },
   {
     id: '04',
-    img: 'eco-04.png',
+    img: eco04,
     title: 'Play 2 Earn'
   }
 ])
@@ -38,7 +43,7 @@ const ecoBlockData = reactive([
           <div class="inner">
             <div
             class="icon"
-            :style="{ backgroundImage: `url(/src/assets/image/home/${item.img})` }"
+            :style="{ backgroundImage: `url(${item.img})` }"
             >
             </div>
             <div class="title">{{ item.title }}</div>

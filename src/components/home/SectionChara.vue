@@ -4,28 +4,62 @@ import { Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 
+import charaImg01 from './../../assets/image/home/chara-01.png'
+import charaImg02 from './../../assets/image/home/chara-02.png'
+import charaImg03 from './../../assets/image/home/chara-03.png'
+import charaIcon01 from './../../assets/image/home/chara-ele-01.png'
+import charaIcon02 from './../../assets/image/home/chara-ele-03.png'
+import charaIcon03 from './../../assets/image/home/chara-ele-03.png'
+import chara01_item01 from './../../assets/image/home/chara-01-item-01.png'
+import chara01_item02 from './../../assets/image/home/chara-01-item-02.png'
+import chara01_item03 from './../../assets/image/home/chara-01-item-03.png'
+import chara01_item04 from './../../assets/image/home/chara-01-item-04.png'
+import chara02_item01 from './../../assets/image/home/chara-02-item-01.png'
+import chara02_item02 from './../../assets/image/home/chara-02-item-02.png'
+import chara02_item03 from './../../assets/image/home/chara-02-item-03.png'
+import chara02_item04 from './../../assets/image/home/chara-02-item-04.png'
+import chara03_item01 from './../../assets/image/home/chara-03-item-01.png'
+import chara03_item02 from './../../assets/image/home/chara-03-item-02.png'
+import chara03_item03 from './../../assets/image/home/chara-03-item-03.png'
+import chara03_item04 from './../../assets/image/home/chara-03-item-04.png'
+
 const charaSwiper = ref(null)
 const charaBlockData = reactive([
   {
     name: 'Goku',
-    img: 'chara-01.png',
-    icon: 'chara-ele-01.png',
+    img: charaImg01,
+    icon: charaIcon01,
     ele: 'Light',
-    item: ['chara-01-item-01.png', 'chara-01-item-02.png', 'chara-01-item-03.png', 'chara-01-item-04.png']
+    item: [
+      chara01_item01,
+      chara01_item02,
+      chara01_item03,
+      chara01_item04
+    ]
   },
   {
     name: 'Quinn',
-    img: 'chara-02.png',
-    icon: 'chara-ele-02.png',
+    img: charaImg02,
+    icon: charaIcon02,
     ele: 'Fire',
-    item: ['chara-02-item-01.png', 'chara-02-item-02.png', 'chara-02-item-03.png', 'chara-02-item-04.png']
+    item: [
+      chara02_item01,
+      chara02_item02,
+      chara02_item03,
+      chara02_item04
+    ]
   },
   {
     name: 'Singed',
-    img: 'chara-03.png',
-    icon: 'chara-ele-03.png',
+    img: charaImg03,
+    icon: charaIcon03,
     ele: 'Earth',
-    item: ['chara-03-item-01.png', 'chara-03-item-02.png', 'chara-03-item-03.png', 'chara-03-item-04.png']
+    item: [
+      chara03_item01,
+      chara03_item02,
+      chara03_item03,
+      chara03_item04
+    ]
   }
 ])
 
@@ -70,13 +104,13 @@ const slideNext = () => {
               <div class="photo-box">
                 <div class="photo">
                   <div class="image">
-                    <img :src="`/src/assets/image/home/${item.img}`" alt="">
+                    <img :src="item.img" alt="">
                   </div>
                 </div>
               </div>
               <div class="text-box">
                 <div class="sub-term">
-                  <div class="icon"><img :src="`/src/assets/image/home/${item.icon}`" alt=""></div>
+                  <div class="icon"><img :src="item.icon" alt=""></div>
                   <div class="title">
                     <div class="name">{{ item.name }}</div>
                     <div class="ele">Element: <span>{{ item.ele }}</span></div>
@@ -90,7 +124,7 @@ const slideNext = () => {
                     v-for="part in item.item"
                     :key="part"
                     >
-                      <div class="inner" :style="{ backgroundImage: `url(/src/assets/image/home/${part})` }"></div>
+                      <div class="inner" :style="{ backgroundImage: `url(${part})` }"></div>
                     </div>
                   </div>
                 </div>

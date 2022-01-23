@@ -1,22 +1,27 @@
 <script setup>
 import { reactive } from 'vue'
 
+import supporter01 from './../../assets/image/home/supporter-01.png'
+import supporter02 from './../../assets/image/home/supporter-02.png'
+import supporter03 from './../../assets/image/home/supporter-03.png'
+import supporter04 from './../../assets/image/home/supporter-04.png'
+
 const supBlockData = reactive([
   {
     id: '01',
-    img: 'supporter-01.png'
+    img: supporter01
   },
   {
     id: '02',
-    img: 'supporter-02.png'
+    img: supporter02
   },
   {
     id: '03',
-    img: 'supporter-03.png'
+    img: supporter03
   },
   {
     id: '04',
-    img: 'supporter-04.png'
+    img: supporter04
   }
 ])
 </script>
@@ -31,7 +36,7 @@ const supBlockData = reactive([
         v-for="item in supBlockData"
         :key="item.id"
         >
-          <img :src="`/src/assets/image/home/${item.img}`">
+          <img :src="item.img">
         </div>
       </div>
     </div>

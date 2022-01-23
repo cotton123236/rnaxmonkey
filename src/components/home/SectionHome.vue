@@ -1,9 +1,17 @@
 <script setup>
 import { reactive } from 'vue'
 
+import intro01 from './../../assets/image/home/intro-01.png'
+import intro02 from './../../assets/image/home/intro-02.png'
+import intro03 from './../../assets/image/home/intro-03.png'
+
 const homeBlockData = reactive({
   title: 'RNA x MONKEY GAME ON BLOCKCHAIN',
-  img: ['intro-01.png', 'intro-02.png', 'intro-03.png']
+  img: [
+    intro01,
+    intro02,
+    intro03
+  ]
 })
 </script>
 
@@ -23,7 +31,7 @@ const homeBlockData = reactive({
             <img
             v-for="item in homeBlockData.img"
             :key="item"
-            :src="`/src/assets/image/home/${item}`"
+            :src="item"
             >
           </div>
         </div>

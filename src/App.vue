@@ -2,6 +2,8 @@
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import Home from './pages/Home.vue'
+import './assets/sass/reset.sass'
+import './assets/sass/common.sass'
 </script>
 
 <template>
@@ -13,9 +15,6 @@ import Home from './pages/Home.vue'
 </template>
 
 <style lang="sass">
-@import './assets/sass/reset'
-@import './assets/sass/common'
-
 main
   padding-top: 100px
 </style>
