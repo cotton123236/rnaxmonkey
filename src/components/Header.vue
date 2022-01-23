@@ -4,9 +4,9 @@
 <template>
   <header class="space-lr">
     <div class="container">
-      <a class="logo" href="javascript:;">
-        <img src="./../assets/image/logo.svg" alt="logo"/>
-      </a>
+      <router-link class="logo" to="/">
+        <img src="./../assets/image/logo.png" alt="logo"/>
+      </router-link>
       <nav>
         <a class="links" href="javascript:;">Home</a>
         <a class="links disable" href="javascript:;">Coming Soon</a>
