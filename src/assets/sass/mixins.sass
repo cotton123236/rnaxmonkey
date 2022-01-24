@@ -1,36 +1,36 @@
 @use "sass:math"
-	
+  
 @mixin rwdmax($max)
-	@media only screen and (max-width: $max + px)  
-		@content
+  @media only screen and (max-width: $max + px)  
+    @content
 
 @function px($px)
-	@return math.div($px, 16) * 1rem
+  @return math.div($px, 16) * 1rem
 
 @mixin flex($flex: flex, $fw: nowrap, $fd: row, $jc: center, $ai: center)
-	display: $flex
-	flex-wrap: $fw
-	flex-direction: $fd
-	justify-content: $jc
-	align-items: $ai
+  display: $flex
+  flex-wrap: $fw
+  flex-direction: $fd
+  justify-content: $jc
+  align-items: $ai
 
 @mixin pseudo($pos: absolute, $con: '', $dis: block)
-	position: $pos
-	content: $con
-	display: $dis
+  position: $pos
+  content: $con
+  display: $dis
 
 @mixin posCenter($top: 50%, $left: 50%)
-	position: absolute
-	top: $top
-	left: $left
-	transform: translate(-50%, -50%)
+  position: absolute
+  top: $top
+  left: $left
+  transform: translate(-50%, -50%)
 
 @mixin posFill
-	position: absolute
-	top: 0
-	left: 0
-	width: 100%
-	height: 100%
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
 
 // vars
 $basic-font: 'Poppins', sans-serif
@@ -42,3 +42,20 @@ $pink: #da127d
 $pink-light: #f364a2
 
 $transition: .4s
+
+
+@keyframes moveUpAndDown
+  0%
+    transform: translateY(-5px)
+  50%
+    transform: translateY(10px)
+  100%
+    transform: translateY(-5px)
+
+@keyframes moveUpAndDownCenter
+  0%
+    transform: translate(-50%, -5px)
+  50%
+    transform: translate(-50%, 10px)
+  100%
+    transform: translate(-50%, -5px)

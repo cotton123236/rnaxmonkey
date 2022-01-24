@@ -29,8 +29,8 @@ const supBlockData = reactive([
 <template>
   <section class="sup-block space-lr">
     <div class="block-content maxw-1200">
-      <div class="term">STRATEGIC SUPPORTER</div>
-      <div class="content-item">
+      <div class="term" data-aos="fade">STRATEGIC SUPPORTER</div>
+      <div class="content-item" data-aos="fade-up">
         <div
         class="each-sup"
         v-for="item in supBlockData"

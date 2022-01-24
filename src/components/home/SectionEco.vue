@@ -33,8 +33,8 @@ const ecoBlockData = reactive([
 <template>
   <section class="eco-block space-lr">
     <div class="block-content maxw-1200">
-      <div class="term">TOKEN ECONOMICS</div>
-      <div class="content-item">
+      <div class="term" data-aos="fade">TOKEN ECONOMICS</div>
+      <div class="content-item" data-aos="fade-up">
         <div
         class="each-eco"
         v-for="item in ecoBlockData"

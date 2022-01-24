@@ -59,9 +59,10 @@ const teamBlockData = reactive([
 <template>
   <section class="team-block space-lr">
     <div class="block-content maxw-1200">
-      <div class="term">MEET OUR TEAM</div>
-      <div class="content-item">
-        <div class="each-member"
+      <div class="term" data-aos="fade">MEET OUR TEAM</div>
+      <div class="content-item" data-aos="fade-up">
+        <div
+        class="each-member"
         v-for="item in teamBlockData"
         :key="item.id">
           <div class="name">{{ item.name }}</div>

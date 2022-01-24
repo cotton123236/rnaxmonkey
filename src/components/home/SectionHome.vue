@@ -18,14 +18,14 @@ const homeBlockData = reactive({
 <template>
   <section class="home-block space-lr">
     <div class="block-content maxw-1200">
-      <div class="content-left">
+      <div class="content-left" data-aos="fade-up">
         <div class="title">{{ homeBlockData.title }}</div>
         <div class="btn-wrap">
           <a class="pill-btn fill" href="javascript:;" target="_blank"><span>Buy $RMK</span></a>
           <a class="pill-btn" href="javascript:;" targt="_blank"><span>Getting Started</span></a>
         </div>
       </div>
-      <div class="content-right">
+      <div class="content-right" data-aos="fade" data-aos-delay="200">
         <div class="inner-wrap">
           <div class="image-wrap">
             <img
@@ -115,16 +115,19 @@ const homeBlockData = reactive({
         left: 50%
         transform: translateX(-50%)
         max-width: 265px
+        animation: moveUpAndDownCenter 5s infinite
       &:nth-child(1)
         z-index: 1
         width: 40%
         max-width: 285px
         bottom: 0
         left: 0
+        animation: moveUpAndDown 5s infinite .2s
       &:nth-child(3)
         z-index: 1
         width: 42%
         max-width: 300px
         bottom: 0
         right: 0
+        animation: moveUpAndDown 5s infinite .2s
 </style>

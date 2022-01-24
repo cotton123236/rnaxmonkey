@@ -45,9 +45,10 @@ const featureBlockData = reactive([
 <template>
   <section class="feature-block space-lr">
     <div class="block-content maxw-1200">
-      <div class="term">FEATURES</div>
-      <div class="content-items">
-        <div class="each-feature"
+      <div class="term" data-aos="fade">FEATURES</div>
+      <div class="content-items" data-aos="fade-up">
+        <div
+        class="each-feature"
         v-for="item in featureBlockData"
         :key="item.img"
         >

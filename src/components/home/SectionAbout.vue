@@ -10,10 +10,10 @@ const aboutBlockData = reactive({
 <template>
   <section class="about-block space-lr">
     <div class="block-content maxw-1200">
-      <div class="content-photo">
+      <div class="content-photo" data-aos="fade">
         <img src="/src/assets/image/home/about-01.png">
       </div>
-      <div class="content-text">
+      <div class="content-text" data-aos="fade">
         <div class="title">{{ aboutBlockData.title }}</div>
         <p class="brief" v-html="aboutBlockData.brief"></p>
       </div>
@@ -45,6 +45,8 @@ const aboutBlockData = reactive({
       width: 200px
     +rwdmax(767)
       width: 150px
+    img
+      animation: moveUpAndDown 5s infinite 1s
   .content-text
     flex: 1
     margin-left: 80px

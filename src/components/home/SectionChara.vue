@@ -82,8 +82,8 @@ const slideNext = () => {
 <template>
   <section class="chara-block space-lr">
     <div class="block-content maxw-1200">
-      <div class="term">GAME CHARACTER</div>
-      <div class="content-item">
+      <div class="term" data-aos="fade">GAME CHARACTER</div>
+      <div class="content-item" data-aos="fade">
         <div class="prev-arrow-box">
           <div class="prev-arrow" @click="slidePrev">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M20,40A20,20,0,1,1,40,20,20,20,0,0,1,20,40ZM20,2A18,18,0,1,0,38,20,18,18,0,0,0,20,2Z"/><path d="M22.5,28a1,1,0,0,1-.71-.29l-7-7a1,1,0,0,1,0-1.42l7-7a1,1,0,0,1,1.42,1.42L16.91,20l6.3,6.29a1,1,0,0,1,0,1.42A1,1,0,0,1,22.5,28Z"/></svg>
@@ -214,6 +214,8 @@ const slideNext = () => {
       position: relative
       width: 100%
       padding-bottom: 133.33%
+    .image
+      animation: moveUpAndDown 4s infinite
     .text-box
       flex: 1
       padding-left: 65px

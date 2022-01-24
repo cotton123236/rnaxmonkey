@@ -17,7 +17,7 @@ const currencyNum = computed(() => {
 <template>
   <section class="token-block space-lr">
     <div class="block-content maxw-1200">
-      <div class="content-left">
+      <div class="content-left" data-aos="fade">
         <div class="title">{{ tokenBlockData.title }}</div>
         <p class="brief">{{ tokenBlockData.brief }}</p>
         <div class="token-box">
@@ -26,7 +26,7 @@ const currencyNum = computed(() => {
         </div>
         <a class="pill-btn fill" href="javascript:;" target="_blank"><span>Buy $RMK</span></a>
       </div>
-      <div class="content-right">
+      <div class="content-right" data-aos="fade">
         <div class="sub-title">Total Supply</div>
         <div class="num">{{ currencyNum }}</div>
         <img src="/src/assets/image/home/token.png" alt="">
