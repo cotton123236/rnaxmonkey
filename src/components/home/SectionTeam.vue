@@ -1,9 +1,12 @@
 <script setup>
 import { reactive } from 'vue'
 
+import headshot01 from './../../assets/image/home/robert.png'
+
 const teamBlockData = reactive([
   {
     id: '01',
+    img: headshot01,
     name: 'Robert',
     title: 'Chief Executive Officer',
     list: [
@@ -65,13 +68,25 @@ const teamBlockData = reactive([
         class="each-member"
         v-for="item in teamBlockData"
         :key="item.id">
-          <div class="name">{{ item.name }}</div>
-          <div class="title">{{ item.title }}</div>
-          <ul>
-            <li
-            v-for="(list, index) in item.list"
-            :key="index">{{ list }}</li>
-          </ul>
+          <div
+          class="photo-box"
+          v-if="item.img"
+          >
+            <div class="photo">
+              <div class="image">
+                <img :src="item.img" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="text-box">
+            <div class="name">{{ item.name }}</div>
+            <div class="title">{{ item.title }}</div>
+            <ul>
+              <li
+              v-for="(list, index) in item.list"
+              :key="index">{{ list }}</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -111,20 +126,57 @@ const teamBlockData = reactive([
       .name
         color: $pink-light
     &:first-child
+      flex-direction: row
+      justify-content: center
       width: 100%
+      padding: 45px
+      +rwdmax(767)
+        flex-direction: column
+      .photo-box
+        width: 30%
+        max-width: 190px
+        margin-right: 45px
+        +rwdmax(767)
+          width: 40%
+          margin-right: 0
+          margin-bottom: 25px
+      .text-box
+        width: 70%
+        max-width: 460px
+        align-items: flex-start
+        +rwdmax(767)
+          align-items: center
+          width: 100%
       .name
+        text-align: left
         font-size: px(36)
         +rwdmax(767)
+          text-align: center
           font-size: px(28)
       .title
+        text-align: left
         font-size: px(24)
         +rwdmax(767)
+          text-align: center
           font-size: px(20)
       ul
         margin-top: 25px
         width: auto
         +rwdmax(767)
           margin-top: 20px
+    .photo-box
+      width: 100%
+    .photo
+      position: relative
+      width: 100%
+      padding-bottom: 100%
+      border-radius: 50%
+      overflow: hidden
+    .text-box
+      width: 100%
+      display: flex
+      flex-direction: column
+      align-items: center
     .name
       font-size: px(24)
       font-weight: 600
