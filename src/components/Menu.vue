@@ -44,8 +44,8 @@ const emit = defineEmits(['changeMenuStatus'])
   bottom: 0
   width: 75%
   max-width: 800px
-  background-color: rgba(#fff, .1)
-  backdrop-filter: blur(20px)
+  background-color: rgba(#fff, .85)
+  // backdrop-filter: blur(20px)
   padding: 100px 60px
   opacity: 0
   transform: translateX(100%)
@@ -65,7 +65,7 @@ const emit = defineEmits(['changeMenuStatus'])
     &::before, &::after
       width: 25px
       height: 2px
-      background-color: #fff
+      background-color: #000
       +posCenter
       +pseudo
     &::before
@@ -79,4 +79,7 @@ const emit = defineEmits(['changeMenuStatus'])
     align-items: flex-start
     a
       margin: 15px 0
+      color: #000
+      &::after
+        color: #fff
 </style>
