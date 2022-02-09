@@ -42,9 +42,18 @@ const unit = reactive([
 const isMenuActive = ref(false)
 
 const socialIocn = reactive([
-  tele,
-  twit,
-  enve
+  {
+    href: 'https://t.me/RnaxMonkey_Official',
+    img: tele
+  },
+  {
+    href: 'https://twitter.com/rnamonkey?s=11',
+    img: twit
+  },
+  {
+    href: 'mailto:Maxmonkey@gmail.com',
+    img: enve
+  },
 ])
 
 const menuControl = () => {
@@ -71,11 +80,12 @@ const menuControl = () => {
       </nav>
       <div class="social-box">
         <a
-        href="javascript:;"
         v-for="item in socialIocn"
         :key="item"
+        :href="item.href"
+        target="_blank"
         >
-          <img :src="item" alt="">
+          <img :src="item.img" alt="">
         </a>
       </div>
       <a
