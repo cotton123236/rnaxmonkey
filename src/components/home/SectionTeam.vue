@@ -37,7 +37,7 @@ const teamBlockData = reactive([
   },
   {
     id: '04',
-    name: 'Robert',
+    name: 'Robert D.',
     title: 'Chief Marketing Officer',
     list: [
       '3+ years of experience in project management',
