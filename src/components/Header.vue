@@ -10,32 +10,38 @@ const unit = reactive([
   {
     href: 'javascript:;',
     name: 'Home',
-    isDisable: false
+    isDisable: false,
+    blank: false
   },
   {
     href: 'javascript:;',
     name: 'Playnow',
-    isDisable: true
+    isDisable: true,
+    blank: false
   },
   {
     href: 'javascript:;',
     name: 'Marketplace',
-    isDisable: true
+    isDisable: true,
+    blank: false
   },
   {
     href: 'javascript:;',
     name: 'Farm',
-    isDisable: true
+    isDisable: true,
+    blank: false
   },
   {
-    href: 'javascript:;',
+    href: 'https://drive.google.com/file/d/1b2eCcXdXn7Xy1CtAd5N_9Twsb3T4tDlT/view',
     name: 'Whitepaper',
-    isDisable: false
+    isDisable: false,
+    blank: true
   },
   {
     href: 'javascript:;',
     name: 'Learn More',
-    isDisable: false
+    isDisable: false,
+    blank: false
   }
 ])
 
@@ -74,6 +80,7 @@ const menuControl = () => {
         :class="{disable: item.isDisable}"
         v-for="item in unit"
         :key="item.name"
+        :target="`${item.blank ? '_blank' : ''}`"
         >
         {{ item.name }}
         </a>
