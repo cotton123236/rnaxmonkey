@@ -3,7 +3,7 @@ import { computed, reactive } from 'vue'
 
 const tokenBlockData = reactive({
   title: 'RNAxMONKEY TOKEN',
-  brief: 'RNAXMONKEY Token($RMK) is the governance currency of RNAXMONKEY Metaverse. It will be used for trading, exchanging and breeding monkeys in the game.',
+  brief: 'RNAXMONKEY Token($RxM) is the governance currency of RNAXMONKEY Metaverse. It will be used for trading, exchanging and breeding monkeys in the game.',
   num: 100000000
 })
 
@@ -24,7 +24,7 @@ const currencyNum = computed(() => {
           <div class="sub-title">Contract</div>
           <p>Coming Soon</p>
         </div>
-        <a class="pill-btn fill" href="javascript:;" target="_blank"><span>Buy $RMK</span></a>
+        <a class="pill-btn fill" href="javascript:;" target="_blank"><span>Buy $RxM</span></a>
       </div>
       <div class="content-right" data-aos="fade">
         <div class="sub-title">Total Supply</div>
